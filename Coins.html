@@ -22,10 +22,19 @@
         </nav>
     </header>
 
-    <section id="about">
-        <h1>About ALPHA Watches</h1>
-        <p>At ALPHA, we create timepieces that blend precision, luxury, and timeless style. Our mission is to craft watches that stand the test of time, both in design and functionality. Each piece is carefully crafted with the finest materials and expert craftsmanship.</p>
-    </section>
+        <div class="container">
+            <h1>Coin System with Daily Rewards</h1>
+            <p>Your Coins: <span id="coinCount">0</span></p>
+            <p>Last Login: <span id="lastLogin">Never</span></p>
+    
+            <button class="button" onclick="earnCoins(10)">Earn 10 Coins</button>
+            <button class="button" onclick="spendCoins(20)">Spend 20 Coins</button>
+            <button class="button" onclick="claimDailyReward()">Claim Daily Reward</button>
+        </div>
+    
+        <script src="coins.js"></script>
+
+    <script src="daily-reward.js"></script>
 
     <footer>
         <p>&copy; 2025 ALPHA. All Rights Reserved.</p>
