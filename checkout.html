@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ALPHA Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="checkout.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">ALPHA</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+
+        <div class="cart-summary">
+            <h3>Order Summary</h3>
+            <ul id="cart-items"></ul>
+            <p><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></p>
+            <p><strong>Discount:</strong> -$<span id="discount-amount">0.00</span></p>
+            <p><strong>Total:</strong> $<span id="total">0.00</span></p>
+        </div>
+
+        <div class="discount-section">
+            <label for="discount-code">Discount Code:</label>
+            <input type="text" id="discount-code" placeholder="Enter code">
+            <button id="apply-discount">Apply</button>
+        </div>
+
+        <h3>Payment Method</h3>
+        <div class="payment-options">
+            <button id="credit-card-btn">Credit Card</button>
+            <button id="apple-pay-btn">Apple Pay</button>
+            <button id="google-pay-btn">Google Pay</button>
+        </div>
+
+        <div id="credit-card-form" class="hidden">
+            <h3>Enter Credit Card Details</h3>
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" id="card-name" placeholder="Full Name">
+
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+
+            <div class="card-details">
+                <div>
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" maxlength="3">
+                </div>
+            </div>
+        </div>
+
+        <button class="checkout-btn">Place Order</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ALPHA. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
