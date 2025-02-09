@@ -6,58 +6,24 @@
     <title>Profile Update</title>
     <script defer src="Check-account.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f8f8f8;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-        .profile-icon {
-            font-size: 50px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .password-container {
-            position: relative;
-        }
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-        button {
-            background: black;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <script defer src="edit-profile.js"></script>
 </head>
 <body>
+    <header>
+        <div class="logo">ALPHA</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>>
 
-    <div class="container">
-        <h2>ALPHA</h2>
+            </ul>
+        </nav>
+    </header>
+    <div class="edit-container">
         <div class="profile-icon">👤</div>
         <h3>Change profile</h3>
 
