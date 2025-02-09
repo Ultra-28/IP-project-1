@@ -62,11 +62,13 @@ header {
 .hero h1 {
     font-size: 48px;
     font-weight: bold;
+    color: #222;
 }
 
 .hero p {
     font-size: 20px;
     margin-bottom: 20px;
+    color: #222;
 }
 
 .cta-button {
@@ -108,6 +110,7 @@ header {
     text-align: center;
     transition: transform 0.3s;
     width: 250px;
+    height: 250px;
 }
 
 .category:hover {
@@ -117,6 +120,7 @@ header {
 .category img {
     width: 100%;
     border-radius: 8px;
+    height: 225px;
 }
 
 .category h3 {
@@ -439,8 +443,11 @@ iframe {
 
 .slide img {
     width: 100%;
+    height: 800px; /* Set desired height */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
     border-radius: 5px;
 }
+
 
 .prev, .next {
     position: absolute;

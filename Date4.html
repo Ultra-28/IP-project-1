@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="shop.js"></script>
+    <script defer src="coins.js"></script>
+    <script defer src="slider.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">ALPHA</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- Slider -->
+    <div class="container">
+        <div class="image-section">
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide"><img src="Date/Date4-1.webp"></div>
+                    <div class="slide"><img src="Date/Date4-2.webp"></div>
+                    <div class="slide"><img src="Date/Date4-3.webp"></div>
+                    <div class="slide"><img src="Date/Date4-4.webp"></div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="dots" id="dots"></div>
+        </div>
+
+ <!-- Making sure to add the details -->
+        <div class="details product" data-name="Blackrose Watch" data-price="288">
+            <h1>Date Gold</h1>
+            <p>The Date 004: </p>
+            <p>The Aura Date, subtly nicknamed "Pineapple" to reflect its distinctive elegance, stands out as our most classic design, embodying sophistication and luxury with timeless appeal. For a more relaxed style, it pairs seamlessly with an FKM strap. The Date 004: Steel/Off-White/Yellow Stone features a Seiko Japan NH35A self-winding movement, housed in a blend of brushed and polished steel, and highlights a stunning bezel adorned with multi-colored handset crystals complemented by a guilloché dial.           </p>
+            <div class="price">$488.00</div>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>  
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 ALPHA. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
