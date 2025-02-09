@@ -1,7 +1,5 @@
-// Ensure the script runs only after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // Handle sign-up form submission
+    // Handle sign-up
     let signupForm = document.getElementById("signup-form");
     if (signupForm) {
         signupForm.addEventListener("submit", function (event) {
@@ -15,33 +13,53 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Store credentials in Local Storage
-            localStorage.setItem("username", username);
-            localStorage.setItem("password", password);
+            let users = JSON.parse(localStorage.getItem("users")) || [];
 
-            alert("Sign-up successful! Redirecting to login page...");
-            window.location.href = "login page.html";
+            if (users.some(user => user.username === username)) {
+                alert("Username already exists!");
+                return;
+            }
+
+            // Save user with default coin data
+            users.push({ username, password });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            // Initialize coin system for the new user
+            localStorage.setItem("coins_" + username, "0");
+            localStorage.setItem("lastLogin_" + username, "");
+            localStorage.setItem("streakCounter_" + username, "0");
+
+            alert("Sign-up successful!");
+            window.location.href = "login.html";
         });
     }
 
-    // Handle login form submission
+    // Handle login
     let loginForm = document.getElementById("login-form");
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            let storedUsername = localStorage.getItem("username");
-            let storedPassword = localStorage.getItem("password");
-
             let enteredUsername = document.getElementById("login-username").value;
             let enteredPassword = document.getElementById("login-password").value;
 
-            if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let user = users.find(user => user.username === enteredUsername && user.password === enteredPassword);
+
+            if (user) {
+                localStorage.setItem("currentUser", enteredUsername);
                 alert("Login successful!");
-                window.location.href = "shop.html"; // Redirect to a dashboard page
+                window.location.href = "shop.html"; // Redirect to shop page
             } else {
                 alert("Invalid username or password!");
             }
         });
     }
+
+    // Logout function
+    window.logout = function () {
+        localStorage.removeItem("currentUser");
+        alert("Logged out!");
+        window.location.href = "login.html";
+    };
 });

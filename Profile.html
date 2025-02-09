@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - ALPHA Watches</title>
+    <title>Contact - ALPHA Watches</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
@@ -22,18 +22,19 @@
         </nav>
     </header>
 
-        <div class="container">
-            <h1>Coin System with Daily Rewards</h1>
-            <p>Your Coins: <span id="coinCount">0</span></p>
-            <p>Last Login: <span id="lastLogin">Never</span></p>
-    
-            <button class="button" onclick="earnCoins(10)">Earn 10 Coins</button>
-            <button class="button" onclick="spendCoins(20)">Spend 20 Coins</button>
-            <button class="button" onclick="claimDailyReward()">Claim Daily Reward</button>
-        </div>
-    
-        <script src="coins.js"></script>
-
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, please don't hesitate to reach out to us. We'd love to hear from you!</p>
+        <form action="submit-contact-form.php" method="POST">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 
     <footer>
         <p>&copy; 2025 ALPHA. All Rights Reserved.</p>
