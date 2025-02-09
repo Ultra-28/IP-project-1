@@ -3,140 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Update</title>
-    <script defer src="Check-account.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f8f8f8;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-        .profile-icon {
-            font-size: 50px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .password-container {
-            position: relative;
-        }
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-        button {
-            background: black;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    <title>Settings Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+
     </style>
 </head>
+<header>
+    <div class="logo">ALPHA</div>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="home.html" class="nav-link">Home</a></li>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
+            <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-
-    <div class="container">
-        <h2>ALPHA</h2>
-        <div class="profile-icon">👤</div>
-        <h3>Change profile</h3>
-
-        <form id="profile-form">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="username" required>
-
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="email" required>
-
-            <label for="password">Password</label>
-            <div class="password-container">
-                <input type="password" id="password" placeholder="********" required>
-                <span class="toggle-password" onclick="togglePassword()">👁️</span>
-            </div>
-
-            <button type="submit">Update</button>
-        </form>
+    <div class="login-container">
+        <div class="profile-icon">&#128100;</div>
+        <div class="settings-title">SETTINGS</div>
+        <a href="edit-profile.html" class="button">Edit Profile &#10132;</a>
+        <a href="social-badges.html" class="button">Social Badges &#10132;</a>
+        <a href="logout.html" class="button">Log out &#10132;</a>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let currentUser = localStorage.getItem("currentUser");
-
-            if (!currentUser) {
-                alert("No user logged in!");
-                window.location.href = "index.html";
-                return;
-            }
-
-            let users = JSON.parse(localStorage.getItem("users")) || [];
-            let user = users.find(u => u.username === currentUser);
-
-            if (user) {
-                document.getElementById("username").value = user.username;
-                document.getElementById("name").value = user.name || "";
-                document.getElementById("email").value = user.email || "";
-                document.getElementById("password").value = user.password;
-            }
-
-            document.getElementById("profile-form").addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                let updatedUsername = document.getElementById("username").value;
-                let updatedName = document.getElementById("name").value;
-                let updatedEmail = document.getElementById("email").value;
-                let updatedPassword = document.getElementById("password").value;
-
-                if (updatedUsername === "" || updatedPassword === "") {
-                    alert("Username and Password cannot be empty!");
-                    return;
-                }
-
-                if (users.some(u => u.username !== currentUser && u.username === updatedUsername)) {
-                    alert("Username already exists!");
-                    return;
-                }
-
-                let updatedUser = { username: updatedUsername, name: updatedName, email: updatedEmail, password: updatedPassword };
-
-                users = users.map(u => u.username === currentUser ? updatedUser : u);
-                localStorage.setItem("users", JSON.stringify(users));
-
-                if (updatedUsername !== currentUser) {
-                    localStorage.setItem("currentUser", updatedUsername);
-                }
-
-                alert("Profile updated successfully!");
-                window.location.href = "shop.html";
-            });
-        });
-
-        function togglePassword() {
-            let passwordField = document.getElementById("password");
-            passwordField.type = passwordField.type === "password" ? "text" : "password";
-        }
-    </script>
-
 </body>
 </html>

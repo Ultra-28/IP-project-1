@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="product.js"></script>
+    <script defer src="shop.js"></script>
     <script defer src="coins.js"></script>
 </head>
 <body>
@@ -18,17 +18,37 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-                <li><a href="Coins.html">Coins (<span id="coin-count-nav">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="product-details">
-        <img id="product-image" src="" alt="Product Image">
-        <h2 id="product-name"></h2>
-        <p id="product-price"></p>
-        <button id="add-to-cart">Add to Cart</button>
-    </section>
+    <div class="container">
+        <div class="image-section">
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide"><img src="Images/Blackrose-front.png"></div>
+                    <div class="slide"><img src="Images/Blackrose-side.png"></div>
+                    <div class="slide"><img src="Images/Blackrose-strap.png"></div>
+                    <div class="slide"><img src="Images/Blackrose-body.png"></div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="dots" id="dots"></div>
+        </div>
+
+ <!-- Making sure to add the  -->
+        <div class="details product" data-name="Blackrose Watch" data-price="288">
+            <h1>Blackrose Watch</h1>
+            <p>The Date 001: </p>
+            <p>Black/Rose features a Seiko Japan NH35A self-winding movement, housed in a blend of brushed and polished steel, and highlights a stunning guilloché dial.</p>
+            <div class="price">$488.00</div>
+            <div class="button-container">
+                <button class="add-to-cart">Add to Cart</button>  
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 ALPHA. All Rights Reserved.</p>

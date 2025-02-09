@@ -13,12 +13,12 @@
         <div class="logo">ALPHA</div>
         <nav>
             <ul class="nav-list">
-                <li><a href="Profile.html" class="nav-link">Home</a></li>
+                <li><a href="home.html" class="nav-link">Home</a></li>
                 <li><a href="shop.html" class="nav-link">Shop</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
-                <li><a href="Coins.html" class="nav-link">Coins (<span id="coin-count-nav">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
             </ul>
         </nav>
     </header>
@@ -28,6 +28,16 @@
         <p>Discover elegance and precision in every watch.</p>
         <a href="shop.html" class="cta-button">Shop Now</a>
     </section>
+<!-- pop-up box -->
+<div id="coinsModal" class="pop-up">
+    <div class="pop-up-content">
+        <span class="close-btn">&times;</span>
+        <iframe id="coinsFrame" src="coins.html"></iframe>
+    </div>
+</div>
+
+<!-- Link to Open Modal -->
+<script defer src="pop-up.js"></script>
 
     <section id="categories" class="categories">
         <h2>Shop by Category</h2>

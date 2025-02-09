@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="watch-style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="javascript:history.back()" class="back-arrow">&#8592;</a> <!-- Back arrow button on the left -->
+        Alpha
+    </div>
+    <div class="container">
+        <div class="image-section">
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide"><img src="Images/Blackrose-front.png"></div>
+                    <div class="slide"><img src="Images/Blackrose-side.png"></div>
+                    <div class="slide"><img src="Images/Blackrose-strap.png"></div>
+                    <div class="slide"><img src="Images/Blackrose-body.png"></div>
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <div class="dots" id="dots"></div>
+        </div>
+        <div class="details">
+            <h1>Blackrose watch</h1>
+            <p>The Date 001: Black/Rose features a Seiko Japan NH35A self-winding movement, housed in a blend of brushed and polished steel, and highlights a stunning guilloché dial.</p>
+            <div class="price">$88.00</div>
+            <div class="button-container">
+                <a href="#" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const slider = document.getElementById("slider");
+        const dotsContainer = document.getElementById("dots");
+        
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+            document.querySelectorAll(".dot").forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentIndex);
+            });
+        }
+        
+        function moveSlide(step) {
+            currentIndex = (currentIndex + step + slides.length) % slides.length;
+            updateSlider();
+        }
+        
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+        }
+        
+        slides.forEach((_, index) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            dot.addEventListener("click", () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        updateSlider();
+    </script>
+</body>
+</html>

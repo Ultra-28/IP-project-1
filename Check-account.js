@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (user) {
                 localStorage.setItem("currentUser", enteredUsername);
                 alert("Login successful!");
-                window.location.href = "shop.html"; // Redirect to shop page
+                window.location.href = "home.html"; // Redirect to shop page
             } else {
                 alert("Invalid username or password!");
             }
