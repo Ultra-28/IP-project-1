@@ -60,6 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.logout = function () {
         localStorage.removeItem("currentUser");
         alert("Logged out!");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     };
 });

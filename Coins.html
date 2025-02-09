@@ -5,34 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - ALPHA Watches</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="coins.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">ALPHA</div>
         <nav>
             <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="home.html" class="nav-link">Home</a></li>
                 <li><a href="shop.html" class="nav-link">Shop</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
-                <li><a href="Coins.html">Coins (<span id="coin-count">0</span>)</a></li>
+                <li><a href="coins.html" class="nav-link">Coins (<span id="coin-count-nav">0</span>)</a></li>
+
             </ul>
         </nav>
     </header>
 
-        <div class="container">
-            <h1>Coin System with Daily Rewards</h1>
-            <p>Your Coins: <span id="coinCount">0</span></p>
-            <p>Last Login: <span id="lastLogin">Never</span></p>
-    
-            <button class="button" onclick="earnCoins(10)">Earn 10 Coins</button>
-            <button class="button" onclick="spendCoins(20)">Spend 20 Coins</button>
-            <button class="button" onclick="claimDailyReward()">Claim Daily Reward</button>
+    <div class="reward-container">
+        <h2>Total Coins: <span id="coin-count-main">0</span></h2>
+        <h3>Current Streak: <span id="streak-count">0</span> days</h3>
+        <h3>Total Coins Earned: <span id="total-coins-earned">0</span></h3>
+        <div class="reward-grid">
+            <div class="reward-item"><img src="coin.png" alt="Coin"> +10</div>
+            <div class="reward-item"><img src="coin.png" alt="Coin"> +10</div>
+            <div class="reward-item"><img src="coin.png" alt="Coin"> +10</div>
+            <div class="reward-item"><img src="coin.png" alt="Coin"> +10</div>
+            <div class="reward-item"><img src="coin.png" alt="Coin"> +10</div>
+            <div class="reward-item"><img src="coin.png" alt="Coin"> +10</div>
+            <div class="reward-item special"><img src="coin.png" alt="Coin"> +50</div>
         </div>
-    
-        <script src="coins.js"></script>
+        <button onclick="claimDailyReward()">Claim Rewards</button>
+    </div>
 
 
     <footer>

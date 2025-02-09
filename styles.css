@@ -299,6 +299,54 @@ footer {
     margin-top: 10px;
 }
 
+/* Coin */
+.reward-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reward-container h2, .reward-container h3 {
+    margin-bottom: 10px;
+}
+
+.reward-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.reward-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.reward-item:hover {
+    transform: translateY(-5px);
+}
+
+.reward-item img {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+.special {
+    background: #f1c40f;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 6px 12px rgba(241, 196, 15, 0.5);
+}
+
 /* ====== Responsive Design ====== */
 @media (max-width: 1024px) {
     .product-list {
