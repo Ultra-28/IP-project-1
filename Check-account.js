@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("streakCounter_" + username, "0");
 
             alert("Sign-up successful!");
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         });
     }
 

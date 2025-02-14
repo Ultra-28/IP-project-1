@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings Page</title>
+    <title>Profile Settings</title>
     <link rel="stylesheet" href="styles.css">
-    
-
-    </style>
 </head>
-<header>
-    <div class="logo">ALPHA</div>
-    <nav>
-        <ul class="nav-list">
-            <li><a href="home.html" class="nav-link">Home</a></li>
-            <li><a href="shop.html" class="nav-link">Shop</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="contact.html" class="nav-link">Contact</a></li>
-            <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
-            <li><a href="profile.html" class="nav-link">Profile</a></li>
-        </ul>
-    </nav>
-</header>
 <body>
-    <div class="edit-container">
-    <div class="login-container">
-        <div class="profile-icon">&#128100;</div>
-        <div class="settings-title">SETTINGS</div>
-        <a href="edit-profile.html" class="button">Edit Profile &#10132;</a>
-        <a href="social-badges.html" class="button">Social Badges &#10132;</a>
-        <a href="logout.html" class="button">Log out &#10132;</a>
-    </div>
+    <header>
+        <div class="logo">ALPHA</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="profile-container">
+        <div class="profile-box">
+            <div class="profile-icon">&#128100;</div>
+            <h2 class="settings-title">Profile Settings</h2>
+            <div class="profile-options">
+                <a href="edit-profile.html" class="button-profile">Edit Profile &#10132;</a>
+                <a href="social-badges.html" class="button-profile">Social Badges &#10132;</a>
+                <a href="coins.html" class="button-profile">Coins &#10132;</a>
+                <a href="coins.html" class="button-profile">Vouchers &#10132;</a>
+                <a href="logout.html" class="button-profile logout">Log out &#10132;</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

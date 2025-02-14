@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vouchers - ALPHA Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="coins.js"></script>
+    <script defer src="vouchers.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">ALPHA</div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cart.html" class="nav-link">Cart (<span id="cart-count">0</span>)</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="voucher-container">
+        <h2 class="section-title">Redeem Vouchers</h2>
+        <p>Your Coins: <span id="coin-count-main">0</span></p>
+        <div class="voucher-list">
+            <div class="voucher-item" data-cost="50">
+                <p>$5 Discount Voucher</p>
+                <button class="redeem-button" onclick="redeemVoucher(50, '5-discount')">Redeem (50 Coins)</button>
+            </div>
+            <div class="voucher-item" data-cost="100">
+                <p>$10 Discount Voucher</p>
+                <button class="redeem-button" onclick="redeemVoucher(100, '10-discount')">Redeem (100 Coins)</button>
+            </div>
+            <div class="voucher-item" data-cost="200">
+                <p>$20 Discount Voucher</p>
+                <button class="redeem-button" onclick="redeemVoucher(200, '20-discount')">Redeem (200 Coins)</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 ALPHA. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

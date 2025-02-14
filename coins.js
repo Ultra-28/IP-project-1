@@ -63,10 +63,10 @@ function updateRewardImages() {
     rewardItems.forEach((item, index) => {
         if (index < streakCounter) {
             item.classList.add("claimed"); // Mark as claimed
-            item.innerHTML = `<img src="claimed-coin.png" alt="Claimed Coin"> Claimed`;
+            item.innerHTML = `<img src="Images/coin.webp"> Claimed`;
         } else {
             item.classList.remove("claimed");
-            item.innerHTML = `<img src="coin.png" alt="Coin"> +${index === 6 ? 50 : 10}`;
+            item.innerHTML = `<img src="Images/coin.webp"> +${index === 6 ? 50 : 10}`;
         }
     });
 }
